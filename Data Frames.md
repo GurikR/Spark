@@ -84,6 +84,16 @@ df.select("id", "result")
 Spark Session: is single entry point to all **dataframe api** functionality, automatically created in databricks notebook as variable **spark**.
 <img width="695" alt="Screenshot 2023-08-26 222530" src="https://github.com/GurikR/Spark/assets/5446906/e0825298-0609-4478-a55a-1783427e4155">
 
+# Reader and Writer
+DataFrameReader - Interface used to load df from external resources
+spark.read.parquet("/mnt/training/ecommerce/events.parquet")
+
+DFWriter - used to write data to external systems.
+(df.write()
+  .option("compression", "snappy")
+  .mode("overwrite")
+  .parquet(outPath)
+  )
 
 
 
